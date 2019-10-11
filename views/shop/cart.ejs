@@ -1,0 +1,30 @@
+<%- include('../includes/head') %> <%- include('../includes/nav') %>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <% if(products.length > 0){ %>
+        <ul>
+          <% for(let product of products){ %>
+          <li>
+            <%= product.title %> (<%= product.cartItem.quantity %>)
+            <form action="/delete-cart-item" method="post">
+              <input type="hidden" name="productID" value="<%=product.id%>" />
+              <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+          </li>
+
+          <% } %>
+          <form action="/order" method="post">
+            <button type="submit" class="btn btn-success">Order Now</button>
+          </form>
+        </ul>
+        <% }else{ %>
+        <h2>No Product in Cart</h2>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../includes/end') %>

@@ -1,0 +1,23 @@
+<%- include('../includes/head')%> <%- include('../includes/nav')%>
+<main>
+  <div class="container">
+    <div class="row">
+      <% if (orders.length <= 0 ){%>
+      <h2>nothing here</h2>
+      <%}else{%>
+      <ul>
+        <% orders.map(order=> { %>
+        <li><%= order.id %></li>
+        <ul>
+          <% order.products.map(product =>{ %>
+          <li><%= product.title %> (<%= product.orderItem.quantity %>)</li>
+          <%})%>
+        </ul>
+        <%})%>
+      </ul>
+      <%}%>
+    </div>
+  </div>
+</main>
+
+<%- include('../includes/end')%>

@@ -1,0 +1,11 @@
+{
+    "files.watcherExclude": {
+        "**/node_modules/*/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true
+    },
+    "editor.suggest.localityBonus": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "emmet.showSuggestionsAsSnippets": true
+}

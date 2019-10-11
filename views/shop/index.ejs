@@ -1,0 +1,29 @@
+<!--const products-->
+<%- include('../includes/head') %>
+<%- include('../includes/nav') %>
+<main>
+    <div class="container">
+        <div class="row">
+            <% if(products.length > 0) { %> <% for(let product of products){ %>
+                <div class="col-4 mt-2">
+                    <div class="card">
+                        <img
+                                src="<%= product.imageUrl %>"
+                                alt=""
+                                class="card-image-top"
+                        />
+                        <div class="card-body">
+                            <h4 class="card-title">Rp.<%= product.price %></h4>
+                            <p class="card-text"><%= product.title %></p>
+                            <a href="#" class="btn btn-primary">BUY</a>
+                        </div>
+                    </div>
+                </div>
+            <% }}else{ %>
+                <h4>No product here.</h4>
+            <% } %>
+        </div>
+    </div>
+</main>
+<%- include('../includes/end') %>
+
